@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Ambiental</title>
+    <style>/*Médoto interno para trabalhar com css*/
+        
+        
+        
+        #div_id{background:url(Imagens/capaVerde.jpg) no-repeat center;background-size:cover;height:700px;margin:0}/*Adição de imagem no seletor id div_id(referente a tag div) sem repetição cobrindo todo o espaço, mas com altura definida.*/
+        #h1_id{font-style:oblique;color:aliceblue;background-color: black;font-size:xx-large;text-align: center;font-family:Verdana, Geneva, Tahoma, sans-serif;margin:0}/*Mudança de cor na imagem, fundo do título e a família do tipo(fonte). */
+        
+        /*Abaixo mudança aplicada na id p_id referente a tag p.*/
+        #p_id{font-size:x-large;text-align:center;font-family:Verdana, Geneva, Tahoma, sans-serif;background-color:rgb(212, 212, 212);opacity: 70%;color:darkslategray;margin:0}/*Altera a cor, tamanho e o tipo de fonte em tag da id p_id(referente a tag p).Foi também aplicado uma alteração na cor do fundo com opacidade*/
+
+        /*Abaixo a tag da id p_id2 referente a tag p2 inclui alinhamento de texto centralizado, mudança no tipo da fonte, mudança no tamanho da fonte, mudança na cor da fonte e mudança no peso da fonte*/
+        #p_id2{text-align:center;font-family:Verdana, Geneva, Tahoma, sans-serif;font-size:large;color:rgb(0, 0, 0);font-weight: 400;opacity:70%}
+        
+        /*Abaixo tanto as classes div3_class,div4_class e div5_class referentes a div3,div,4 e div5, diveram a cor de fundo alterado,a largura e a altura alterada, um comando display:flex(transforma também a div em um container) para utilizar flex_direction para alinhar os conteúdos de cada uma das divs em coluna.*/
+        .div3_class{background-color:darkseagreen;width:1000px;height:auto;padding:30px;display:flex;flex-direction:column;}
+        .div4_class{background-color:darkseagreen;width:1000px;height:auto;padding:30px;display:flex;flex-direction:column;}
+        .div5_class{background-color:darkseagreen;width:1000px;height:auto;padding:30px;display:flex;flex-direction:column;}
+        /*O comando abaixo alinha todas as divs que estão dentro da classe div_ClasseA(referente a tag div_A) em linha com a propriedade justify-content e o valor space-between. Neste caso poude se enquadrar em linha(row) pelo fato das divs de dentro se enquadrarem alinhados corretamente( com espaçamento correto) no espaço horizontal em uma única linha.*/
+        .div_ClasseA{display:flex;justify-content: space-between;font-size:larger}
+
+        /*O comando abaixo da classe div_classeB referente a tag div_B, alinha as divs que estão dentro, em linha utilizando o display:flex(transforma a div em container) com flex-direction:row. É colocada também uma mudança na cor de fundo e um espaçamento entre a borda e a letra de 20px(padding).*/ 
+        .div_ClassB{max-width:100%;padding:20px;display:flex;flex-direction:row;background-color:darkseagreen;font-size:larger;height:auto;}
+        .div7_class{max-width:65%;margin:10px}/*Foi alterada a largura máxima da classe div7_class referente a tag div7, para que a imagem da outra div( de dentro da tag div6) pudesse ocupar um tamanho maior.*/
+        .div6_class{display:block;background:url(Imagens/bull\ 1080p.png) no-repeat center;background-size:cover;width:600px;height:auto}
+        /*Alteração no tamanho da fonte*/
+        .divInfo_Class{font-size:larger;}
+        
+        /*Abaixo é aplicado uma mudança de cor de fundo,cor da letra e tamanho da letra, com a criação de um container e um espaçamento entre a borda e a letra de 20px(padding).*/
+        .div_ClassC{max-width:100%;padding:20px;background-color:black;display:flex;color:white;font-size:small}
+        #em_id2{font-size:small}/*Foi aplicado uma redução de letra id em_id2 da tag em. Se não aplicasse ficaria com a letra menor ainda( muito pequenas), pegando as alterações feitas em .div_ClassC.*/
+       
+        /*Media Query aplicado para tela de 1368 pixel de largura. Foi modificado o tamanho da imagem da capa e o tamanho da letra que compõe o título que é aderido à capa*/
+        @media screen and (max-width:1368px) and (min-width:1280px){#div_id{height:510px;max-width:100%;}#h1_id{font-size:x-large}#p_id{font-size:large}}
+
+        /*Abaixo foi aplicado o media query para trabalhar a responsividade em tablets, foi dividido em partes para cada conjunto. Foi alterada o tamanho da fonte, a posição da imagem com o texto de linha para coluna.*/
+        
+        /*Conjunto que faz parte do cabeçalho(a capa)*/
+        @media screen and (max-width:768px){#p_id2{max-width:100%;font-size:medium}#h1_id{max-width:100%;font-size:medium}#p_id{max-width:100%;font-size:large}#div_id{display:block;background-position:10%;height:430px;max-width:100%;}}
+        /*Conjunto da tag div_A.*/
+        @media screen and (max-width:768px){.div_ClasseA{display:block;font-size:medium;}.div3_class{height:auto;width:fit-content}.div4_class{height:auto;width:fit-content} .div5_class{height:auto;width:fit-content}}
+        /*Conjunto da tag div_B*/
+        @media screen and (max-width:768px){.div_ClassB{display:block;font-size:medium;transform:translateY(-80px);}.div6_class{display:block;max-width:100%;width:auto;height:400px}.div7_class{margin:0}}/*Aplicando margin 0 para tirar o espaço desnecessário*/
+        /*Conteúdo frase e contato.*/
+        @media screen and (max-width:768px){.divInfo_Class{display:block;transform:translateY(-80px)}#p8_id{font-size:medium;}#p7_id{font-size:medium;}}
+        /*Conjunto da tag div_C*/
+        @media screen and (max-width:768px){.div_ClassC{display:block;max-width:100%;transform:translateY(-80px)}#p9_id{font-size:small}#em_id2{font-size:small}}
+        /*Abaixo tira o espaço em branco indesejado, localizado ao lado direito da página.*/
+        
+        /*Alterações de responsividade para telas de 320px. Segue a mesma base, mas em comparação à qualidade de 768px, as dimensões da capa e da imagem presente na .div_class( imagem do boi) foram alteradas(para se enquadrar melhor), e juntamente o tamanho das fontes foram reduzidas*/
+        @media screen and (min-width:320px) and (max-width:500px){#p_id2{max-width:100%;font-size:small}#h1_id{max-width:100%;font-size:small}#p_id{max-width:100%;font-size:small}#div_id{display:block;background-position:10%;max-width:100%;background-position: center;}}
+        /*Conjunto da tag div_A.*/
+        @media screen and (min-width:320px) and (max-width:500px){.div_ClasseA{display:block;font-size:small;}.div3_class{height:auto;width:fit-content}.div4_class{height:auto;width:fit-content} .div5_class{height:auto;width:fit-content}}
+        /*Conjunto da tag div_B*/
+        @media screen and (min-width:320px) and (max-width:500px){.div_ClassB{display:block;font-size:small;transform:translateY(-80px)}.div6_class{display:block;max-width:100%;width:auto;height:200px}.div7_class{margin:0}}
+        /*Conteúdo frase e contato.*/
+        @media screen and (min-width:320px) and (max-width:500px){.divInfo_Class{display:block;transform:translateY(-80px)}#p8_id{font-size:small;}#p7_id{font-size:small;}}
+        /*Conjunto da tag div_C*/
+        @media screen and (min-width:320px) and (max-width:500px){.div_ClassC{display:block;max-width:100%;transform:translateY(-80px)}#p9_id{font-size:xx-small}#em_id2{font-size:x-small}}
+        
+        
+        /* Responsividade para tables com 1200px,1080px e 800px.*/
+        @media screen and (min-width:768px) and (max-width:1200px){#p_id2{max-width:100%;font-size:medium}#h1_id{max-width:100%;font-size:medium}#p_id{max-width:100%;font-size:large}#div_id{display:block;background-position:10%;height:430px;max-width:100%;}}
+        /*Conjunto da tag div_A.*/
+        @media screen and (min-width:768px) and (max-width:1200px){.div_ClasseA{display:block;font-size:medium;}.div3_class{height:auto;width:fit-content}.div4_class{height:auto;width:fit-content} .div5_class{height:auto;width:fit-content}}
+        /*Conjunto da tag div_B*/
+        @media screen and (min-width:768px) and (max-width:1200px){.div_ClassB{display:block;font-size:medium;transform:translateY(-80px);}.div6_class{display:block;max-width:100%;width:auto;height:400px}.div7_class{margin:0}}/*Aplicando margin 0 para tirar o espaço desnecessário*/
+        /*Conteúdo frase e contato.*/
+        @media screen and (min-width:768px) and (max-width:1200px){.divInfo_Class{display:block;transform:translateY(-80px)}#p8_id{font-size:medium;}#p7_id{font-size:medium;}}
+        /*Conjunto da tag div_C*/
+        @media screen and (min-width:768px) and (max-width:1200px){.div_ClassC{display:block;max-width:100%;transform:translateY(-80px)}#p9_id{font-size:small}#em_id2{font-size:small}}
+        
+        /*Abaixo tira o espaço em branco indesejado, localizado ao lado direito da página.*/
+        body{overflow-x: hidden;}
+        @media screen and (min-width:320px) and (max-width:500px){*{overflow-x: hidden;}}
+        @media screen and (max-width:768px){*{overflow-x: hidden;}}
+        @media screen and (min-width:769px) and (max-width:1200px){*{overflow-x: hidden;}}
+    
+    </style>
+</head>
+<body>
+   
+    <div id="div_id"><!--/*Criação da div para enquadrar o titulo, a imagem do cabeçalho e a frase de uma forma visualmente trabalhada no css.*/-->
+    <h1 id="h1_id">Você sabe quais as consequências que o aquecimento global pode nos trazer?</h1><!--Título-->
+    <!--Espaçamento de linha, responsável também pelo espaçamento da imagem principal do cabeçalho(imagem aderida no CSS).-->
+    </div>
+    
+    <!--Abaixo a tag p e p2 com pequena informação em texto-->
+    <p id="p_id"><!--Tag p para digitar a frase reflexiva-->
+        Tenha consciência e ilumine o mundo. A decisão está também em suas mãos.    
+    </p> 
+    <br> <br>
+    <p2 id="p_id2">O aquecimento global é o aumento da temperatura gerada pela ação humana que quando se apresenta demasiadamente é responsável por criar riscos ao futuro da humanidade. 
+        <br>A poluição das grandes industrias, o desmatamento, a pecuária e a queimada são os principais vilões que danificam o nosso ecossistema ambiental.
+        <br>É necessário que grande parte da população mundial colabore para frearmos a destruição ecológica, pois certamente impactará na nossa sobrevivência e em muitas espécies de vegetações e animais. 
+        <br>Atualmente as inconveniências podem não estar acontecendo diretamente conosco, mas se não fizermos nada nossos filhos, netos e as futuras gerações seguintes sentirão as consequências.
+        </p2> 
+    <br><br><br><br>
+    
+    
+    <div_A class="div_ClasseA"><!--Tag div_A serve para organizar as demais div em row no CSS-->
+    <div3 class="div3_class"><!--Div contendo div(div3_2) de imagem e tag p(p3) de texto fazendo sentido-->
+    <div3_2>
+    <img src="Imagens/desmatamento1080p.png" title="Desmatamento" width="100%" height="100%">
+    </div3_2>
+    
+    <p3>Nossa mata e vegetação tem um forte poder de transformar o CO2(um composto extremamente responsável pelo aumento da temperatura) em Oxigênio, porém ao desmatarmos estamos eliminando todo o mecanismo responsável pela retirada desse elemento. 
+    </p3>
+    </div3>
+    
+    <div4 class="div4_class"><!--Div contendo div(div4_2)de imagem e tag p(p4) de texto fazendo sentido-->
+    <div4_2>
+        <img src="Imagens/queimada1080p.png" title=Queimada width="100%" height="100%">
+    </div4_2>
+    
+    <p4>As queimadas liberam CO2 assim como os grandes poluentes gerados pelas industrias, esse elemento se eleva para a atmosfera e compromete a camada de Ozônio, uma fonte de proteção fundamental para bloquear raios ultra violetas emitidas pela luz solar(IBF Instituto Brasileiro de Floresta,data indefinida). Desta forma podemos ficar vulneráveis em contrair câncer de pele ao ficarmos expostos a luz do sol por longos períodos. Indivíduos trabalhadores da zona rural devem precaver com mais cuidado em relação a esse perigo.
+    </p4>
+    </div4>
+
+    <div5 class="div5_class"><!--Div contendo div(div5_1) de imagem e tag p(p5) de texto fazendo sentido-->
+    <div5_2>
+        <img src="Imagens/derretimento1080p.png" title="Derretimento" width="100%" height="100%">
+    </div5_2>
+    <p5>O CO2 está diretamente ligado ao aumento da temperatura, responsável por destruir nosso ecossistema ambiental. Como consequência, isso pode implicar na extinções de muitas espécies de animais que são sensíveis e intolerantes a alta temperatura, pode também gerar uma falta de água potável nos próximos anos ocasionada pela seca, e ainda é também capaz de promover o derretimento das geleiras contribuindo para o aumento do nível oceânico podendo causar inundações das áreas litorâneas (IBF Instituto Brasileiro de Floresta,data indefinida).
+    </p5>
+    </div5>
+    </div_A>
+    <br><br><br><br>
+
+    
+    <div_B class="div_ClassB"><!--A div_B foi criada para agrupar lado a lado uma div com a outra( div6 contendo a imagem com a div7 contendo texto).-->
+        <div6 class="div6_class"><!--div6 contendo imagem-->
+           
+        </div6>
+        <div7 class="div7_class"><!--div7 contendo texto-->
+            
+            <p6 class="p6_class">Vale lembrar que a pecuária é também um dos vilões responsáveis pelo aquecimento global. A digestão do gado gera gás metano em seu organismo a qual é liberado no ambiente por meio de arroto ou fezes deste animal. Assim é de extrema importância saber que esse elemento é também responsável por favorecer o aquecimento global ao mesmo nível que o CO2 compromete o meio ambiente(Fogaça, data indefinida).
+            <br><br>
+            Para amenizar o impactato que a pecuária traz ao meio ambiente, é fundamental que adote certas contramedidas. Uma delas é evidar a degradação do solo pelos quais os gados se alimentam. Ao deixar os gados livres, o solo se torna infértil, principalmente quando a quantidade de gado ultrapassa a capacidade de carga de pastagem(conhecido como sobrepastoreio)(Ferrarini,2010).
+            <br><br>
+            Um meio de evitar este transtorno é criar gados através de confinamentos, a outra maneira é utilizar o sistema silvepastoril, uma combinação de plantar árvores e vegetações no pasto em conjunto com os gados, podendo assim amenizar a degradação do solo(Embrapa Florestas, data indefinida).
+            Pode parecer absurdo se afirmarmos que a pecuária representa 70 por cento de toda a terra agrícola e 30 por cento da superfície de todo o planeta(Ferrarini,2010). Entretanto são dados reais e originais, agora imagine se todas essas áreas voltadas a pecuária viesse a ter extensas quilometragens de solo degradado. Concerteza seria um ponto negativo ao considerarmos pelos riscos ambientais que podem gerar apartir disso. Portanto dessa forma devemos ser conscientes e nos comprometer em criar soluções para amenizar os impactos causados pela pecuária.
+            </p6>
+        </div7>
+    </div_B>
+    <br><br><br>
+
+    <div_info class="divInfo_Class">
+    <!--Tag p7 traz informação para finalizar e reforçar as idéias anteriores.-->
+    <p7 id="p7_id"> É importante que pense na natureza, evite a queimada, a derrubada de árvores e a pecuária desfreiada sem medidas, essas diferenças podem salvar o futuro das próximas gerações. A decisão está na conscietização do nosso esforço como um todo.
+    </p7>
+    <br><br>
+
+
+    <!--Abaixo a tag p8 traz informação do autor da página e o contato-->
+    <p8 id="p8_id"> Para mais informações envie um e-mail para: max.ethereal@gmail.com.
+        <br>
+         Autor da página: Max Alexandre Ken Iti Oda.</p8>
+    <br><br><br><br>
+    </div_info>
+
+    <div_C class="div_ClassC"><!--div_c foi criada para aderir as considerações finais,que consiste em ser o objetivo da página web e as referências.-->
+        <p9 id="p9_id"><!--Tag p9 inclui o texto e as referências-->
+            <em id="em_id2">Considerações:<br><br>
+        
+             
+    
+            Esta página não está associada a nenhuma atividade institucional de proteção ambiental, e nem a qualquer ordem imposta pelo município ou governo.
+            <br>
+            Não envolve ganhos comerciais.
+            <br>
+            Esta página está diretamente ligada à uma atividade dos estudantes universitário proposta pela universidade pertencente que tem como finalidade promover a cooperação comunitária envolvendo temas de discussão relacionados a ODS proposto pela ONU.
+            <br>
+            A participação não é em nenhum momento obrigatória por parte do leitor.
+           <br><br><br>
+            </em>
+
+            Referências correspondente ao conteúdo:
+             <br><br>
+            IBF Instituto Brasileiro de Floresta. AQUECIMENTO GLOBAL:REFLEXO DO DESMATAMENTO. IBF Instituto Brasileiro de Floresta, sem data de publicação.Disponível em : https://www.ibflorestas.org.br/aquecimento-global?utm_source=google-ads&utm_medium=cpc&utm_campaign=nativas-cpa&keyword=efeito%20estufa&creative=367878241909&gad=1&gclid=Cj0KCQjwrMKmBhCJARIsAHuEAPTvFwpoqz2IBtsMoqzVKq6aEXElwDpmqk6CpwNoWtd-coyWrEADrs4aAjfHEALw_wcB
+            <br><br>
+            FOGAÇA. Consumo de Carne e Aquecimento Global. uol Mundo Educação, sem data de publicação. Disponível em: https://mundoeducacao.uol.com.br/quimica/consumo-carne-aquecimento-global.htm#:~:text=Estudos%20mostram%20que%20a%20pecu%C3%A1ria,do%20metano%20(CH4)
+            <br><br>
+            FERRARINE. O IMPACTO AMBIENTAL ATRIBUIDO À PECUÁRIA.CRMV PR,2010. Disponível em: https://www.crmv-pr.org.br/artigosView/64_O-impacto-ambiental-atribuido-a-pecuaria.html
+            <br><br>
+            Embrapa Florestas. Integração Lavoura-Pecuária-Floresta (ILPF).Embrapa, sem data de publicação. Disponível em: https://www.embrapa.br/florestas/transferencia-de-tecnologia/sistema-silvipastoril
+            <br><br><br><br>
+            Referências correspondente as imagens:
+            <br><br>
+            geralt. Sem título.Pixabay, sem data de publicação. Disponível em: https://pixabay.com/pt/illustrations/inc%C3%AAndio-florestal-floresta-3836834/
+            <br><br>
+            Pixabay. Sem título.Pixabay, sem data de publicação. Disponível em: https://pixabay.com/pt/photos/ursos-polares-urso-polar-7387841/
+            <br><br>
+            Bernhard_Schuermann. Sem título.Pixabay, sem data de publicação. Disponível em: https://pixabay.com/pt/photos/floresta-nascer-do-sol-desmatamento-7794461/
+            <br><br>
+            Ralphs_Fotos.Sem título. Pixabay,sem data de publicação. Disponível em: https://pixabay.com/pt/photos/touro-boi-vaca-agricultura-4852778/
+            <br><br>
+            StockCake. Unity in Conservation. StockCake, sem data de publicação. Disponível em: https://stockcake.com/i/unity-in-conservation_674663_100416
+            </p9>
+    </div_C>
+
+    
+</body>
+</html>
