@@ -3,7 +3,7 @@ import mysql.connector
 conexao=mysql.connector.connect(host='localhost',
                                 database='extensionista2',
                                 user='root',
-                                password='password')#Tutoria ao corrigir deverá logar com seu host e senha. o database extensionista2 deverá ser criado antes no mysql.
+                                password='dbqr45um')#Tutoria ao corrigir deverá logar com seu host e senha. o database extensionista2 deverá ser criado antes no mysql.
 #Variável cursor recebe conexao(conecta python com o mysql) aplicando o comando cursor
 cursor=conexao.cursor()
 
@@ -332,7 +332,7 @@ def resetar ():#Função para resetar o programa. Aparecerá ao selecionar a op�
       criacao0=f"""CREATE DATABASE extensionista2;"""#Variável criacao0 recebe o comando de CREATE para criar o database no mysql.
       uso=f"""USE extensionista2;"""#Variável uso irá receber o comando USE do mysql para usar o database criado.
       criacao1=f"""CREATE TABLE Perguntas( cod_perguntas int(3) auto_increment, pergunta1 char , pergunta2 char  , pergunta3 char, constraint pk_perguntas primary key(cod_perguntas) );"""#Variável criacao1 irá receber comandos para criar a tabela e as colunas(tabela Perguntas e suas colunas).
-      criacao2=f"""CREATE TABLE Cadastro( cod_cadastro int(3) auto_increment, nome varchar(100) not null, endereco varchar(100) , telefone int, constraint pk_cadastro primary key(cod_cadastro));"""#Variável criacao2 irá receber comandos para criar a tabela e as colunas(tabela Cadastro e suas colunas).
+      criacao2=f"""CREATE TABLE Cadastro( cod_cadastro int(3) auto_increment, nome varchar(100) not null, endereco varchar(100) , telefone bigint, constraint pk_cadastro primary key(cod_cadastro));"""#Variável criacao2 irá receber comandos para criar a tabela e as colunas(tabela Cadastro e suas colunas).
       criacao3=f"""CREATE TABLE Argumento( cod_argumento int(3) auto_increment, aceitabilidade char , argumento varchar(100), constraint pk_argumento primary key(cod_argumento) );"""#Variável criacao3 irá receber comandos para criar a tabela e as colunas(tabela Argumento e suas colunas).
       #A variável de baixo, criacao4, irá criar a tabela Menu com as chaves estrengeiras referentes às demais tabelas geradas.
       criacao4=f"""CREATE TABLE Menu(cod_menu int(3) auto_increment primary key,cod_perguntas int(3),cod_cadastro int(3), cod_argumento int(3), constraint fk_perguntas foreign key(cod_perguntas) references Perguntas(cod_perguntas), constraint fk_cadastro foreign key(cod_cadastro) references Cadastro(cod_cadastro),constraint fk_argumento foreign key(cod_argumento) references Argumento(cod_argumento));"""
@@ -394,6 +394,7 @@ while True:#Laço de repetição para retornar ao início caso digite a opção 
  cursor.execute(comando1)# Executa o codigo da variável comando1(execução no banco de dados do mysql).
  response2 = cursor.fetchall()#Irá trazer os valores da consulta da variável comando1.
  print("Número total de cadastros realizados: {}".format(response2))  # Imprimi a seleção do mysql.
+
 
  comandoPerguntas = f"""Insert into Menu(cod_perguntas) Select distinct cod_perguntas from Perguntas;"""
  cursor.execute(comandoPerguntas)# Executa o codigo da variável comandoPerguntas(execução no banco de dados do mysql).

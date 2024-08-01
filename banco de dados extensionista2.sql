@@ -6,7 +6,7 @@ USE extensionista2;
 
 /*Criação de 3 tabelas com colunas, um auto incremento, constraint e chave primária em cada uma.*/
 CREATE TABLE Perguntas( cod_perguntas int(3) auto_increment, pergunta1 char , pergunta2 char  , pergunta3 char, constraint pk_perguntas primary key(cod_perguntas) );
-CREATE TABLE Cadastro( cod_cadastro int(3) auto_increment, nome varchar(100) not null, endereco varchar(100) , telefone int, constraint pk_cadastro  primary key(cod_cadastro));
+CREATE TABLE Cadastro( cod_cadastro int(3) auto_increment, nome varchar(100) not null, endereco varchar(100) , telefone bigint, constraint pk_cadastro  primary key(cod_cadastro));
 CREATE TABLE Argumento( cod_argumento int(3) auto_increment, aceitabilidade char , argumento varchar(100), constraint pk_argumento  primary key(cod_argumento) );
 
 /*Criação da tabela Menu a qual receberá as chaves estrangeiras das respectivas tabelas criadas anteriormente.*/
