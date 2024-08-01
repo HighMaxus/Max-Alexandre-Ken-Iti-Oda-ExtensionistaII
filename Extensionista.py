@@ -393,7 +393,6 @@ while True:#Laço de repetição para retornar ao início caso digite a opção 
  comando1 = f"""SELECT count(cod_cadastro) from Menu;"""
  cursor.execute(comando1)# Executa o codigo da variável comando1(execução no banco de dados do mysql).
  response2 = cursor.fetchall()#Irá trazer os valores da consulta da variável comando1.
- printCadastro=len(response2)
  print("Número total de cadastros realizados: {}".format(response2))  # Imprimi a seleção do mysql.
 
  comandoPerguntas = f"""Insert into Menu(cod_perguntas) Select distinct cod_perguntas from Perguntas;"""
