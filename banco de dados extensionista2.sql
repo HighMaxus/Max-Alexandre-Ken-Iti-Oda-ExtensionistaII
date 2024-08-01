@@ -10,7 +10,7 @@ CREATE TABLE Cadastro( cod_cadastro int(3) auto_increment, nome varchar(100) not
 CREATE TABLE Argumento( cod_argumento int(3) auto_increment, aceitabilidade char , argumento varchar(100), constraint pk_argumento  primary key(cod_argumento) );
 
 /*Criação da tabela Menu a qual receberá as chaves estrangeiras das respectivas tabelas criadas anteriormente.*/
-CREATE TABLE Menu(cod_perguntas int(3) ,cod_cadastro int(3), cod_argumento int(3),constraint fk_perguntas foreign key(cod_perguntas) references Perguntas(cod_perguntas) 
+CREATE TABLE Menu(cod_menu int(3) auto_increment primary key,cod_perguntas int(3) ,cod_cadastro int(3), cod_argumento int(3),constraint fk_perguntas foreign key(cod_perguntas) references Perguntas(cod_perguntas) 
 , constraint fk_cadastro  foreign key(cod_cadastro) references Cadastro(cod_cadastro), constraint fk_argumento  foreign key(cod_argumento) 
 references Argumento(cod_argumento));
 

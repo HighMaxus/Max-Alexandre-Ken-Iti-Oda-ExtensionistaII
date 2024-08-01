@@ -335,7 +335,7 @@ def resetar ():#Função para resetar o programa. Aparecerá ao selecionar a op�
       criacao2=f"""CREATE TABLE Cadastro( cod_cadastro int(3) auto_increment, nome varchar(100) not null, endereco varchar(100) , telefone int, constraint pk_cadastro primary key(cod_cadastro));"""#Variável criacao2 irá receber comandos para criar a tabela e as colunas(tabela Cadastro e suas colunas).
       criacao3=f"""CREATE TABLE Argumento( cod_argumento int(3) auto_increment, aceitabilidade char , argumento varchar(100), constraint pk_argumento primary key(cod_argumento) );"""#Variável criacao3 irá receber comandos para criar a tabela e as colunas(tabela Argumento e suas colunas).
       #A variável de baixo, criacao4, irá criar a tabela Menu com as chaves estrengeiras referentes às demais tabelas geradas.
-      criacao4=f"""CREATE TABLE Menu(cod_perguntas int(3),cod_cadastro int(3), cod_argumento int(3), constraint fk_perguntas foreign key(cod_perguntas) references Perguntas(cod_perguntas), constraint fk_cadastro foreign key(cod_cadastro) references Cadastro(cod_cadastro),constraint fk_argumento foreign key(cod_argumento) references Argumento(cod_argumento));"""
+      criacao4=f"""CREATE TABLE Menu(cod_menu int(3) auto_increment primary key,cod_perguntas int(3),cod_cadastro int(3), cod_argumento int(3), constraint fk_perguntas foreign key(cod_perguntas) references Perguntas(cod_perguntas), constraint fk_cadastro foreign key(cod_cadastro) references Cadastro(cod_cadastro),constraint fk_argumento foreign key(cod_argumento) references Argumento(cod_argumento));"""
 
       #Os códigos abaixo irão executar os comandos das variáveis de cima( executar no mysql).
 
