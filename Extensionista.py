@@ -51,10 +51,8 @@ def cadastro():# Ao selecionar a opção cadastro como uma das opções que apar
                  continue#Volta para o laço se o valor dado for diferente de S e N ( s e n ).
              return#Foi colocado para solucionar o problema de ter que digitar a opção 'N'(não) duas vezes no input da variável A, por trazer ao usuário a pergunta do input da variável A duas vezes. Porém isso só acontece se digitar 'S' na primeira vez no input de A e ser direcionado para cadastrar novamente, o que consecutivamente faz retornar a mensagem de input de A mais uma vez para o usuário.
 
-
      repetirPergunta()#Executa a função de cima.
      break#Sai do laço de repetição.
-
 
 
 def perguntas():# Ao selecionar a opção perguntas como uma das opções que aparece no menu abrirá esta função.
@@ -99,7 +97,7 @@ def perguntas():# Ao selecionar a opção perguntas como uma das opções que ap
 
 
     while True:#Outro laço de repetição. Criado para que retorne somente nesta parte.
-      pergunta=input('Deseja realizar mais entrevista?(S/N):')#Pergunta para decidir se continuará com a entrevista(no laço de repetição) ou se deseja sair.
+      pergunta=input('Deseja coletar mais dados repetindo as perguntas?(S/N):')#Pergunta para decidir se continuará com a entrevista(no laço de repetição) ou se deseja sair.
       if pergunta=='S' or pergunta=='s':#Se 's' ou 'S' volta para o inicio da função perguntas().
           return perguntas()
 
@@ -110,8 +108,6 @@ def perguntas():# Ao selecionar a opção perguntas como uma das opções que ap
           print("Digite somente S ou N ( SIM ou NÃO)")
           continue
     break# termina o laço, sai da função perguntas voltando para o menu principal.
-
-
 
 
 def argumento():# Ao selecionar a opção argumento como uma das opções que aparece no menu abrirá esta função.
@@ -189,46 +185,49 @@ def consulta():# Ao selecionar a opção consulta como uma das opções que apar
             cursor.execute(comando1_2)#Executa o comando de SELECT da variável comando1_2 no banco de dados do mysql.
             response2=cursor.fetchall()#fechall é utilizado para consultas(trazer valores e colunas), ela inclui todas as linhas.
             print('\n')
-            print('Total de entrevistados: {} .'.format(response2))#Imprimi a seleção do mysql.
+            print('Total de entrevistados que responderam as perguntas: {} .'.format(response2))#Imprimi a seleção do mysql.
             print('\n')
 
+            print('Número de indivíduos conscientes e inconscientes de que a queimada causa danos ao ecossistema:')
             # Variável comando2 recebe um comando na linguagem mysql para selecionar registros(todos) da tabela Perguntas onde a coluna pergunta1 for s ou S(como values no mysql).
             comando2=f"""SELECT count(*) from Perguntas WHERE pergunta1='s' or pergunta1='S'"""
             cursor.execute(comando2)#Executa o comando de SELECT da variável comando2 no banco de dados do mysql.
             response3=cursor.fetchall()#fechall é utilizado para consultas(trazer valores e colunas), ela inclui todas as linhas.
-            print('O número de indivíduos cientes de que a queimada causa danos ao ecossistema é de {} indivíduo(s).'.format(response3))#Imprimi a seleção do mysql.
+            print('Conscientes: {} indivíduo(s).'.format(response3))#Imprimi a seleção do mysql.
 
             # Variável comando2_1 recebe um comando na linguagem mysql para selecionar registros(todos) da tabela Perguntas onde a coluna pergunta1 for n ou N(como values no mysql).
             comando2_1=f"""SELECT count(*) from Perguntas WHERE pergunta1='n' or pergunta1='N'"""
             cursor.execute(comando2_1)#Executa o comando de SELECT da variável comando2_1 no banco de dados do mysql.
             response4=cursor.fetchall()#fechall é utilizado para consultas(trazer valores e colunas), ela inclui todas as linhas.
-            print('Ainda assim {} indivíduos permaneciam sem estarem cientes de que a queimada favorece o dano ecossistêmico.'.format(response4))#Imprimi a seleção do mysql.
+            print('Inconscientes: {} indivíduo(s).'.format(response4))#Imprimi a seleção do mysql.
             print('\n')
 
+            print('Número de indivíduos conscientes e inconscientes de que a derrubada de árvores causa danos ao ecossistema:')
             # Variável comando3 recebe um comando na linguagem mysql para selecionar registros(todos) da tabela Perguntas onde a coluna pergunta2 for s ou S(como values no mysql).
             comando3 = f"""SELECT count(*) from Perguntas WHERE pergunta2='s' or pergunta2='S'"""
             cursor.execute(comando3)#Executa o comando de SELECT da variável comando3 no banco de dados do mysql.
             response5=cursor.fetchall()#fechall é utilizado para consultas(trazer valores e colunas), ela inclui todas as linhas.
-            print('O número de indivíduos cientes de que a derrubada de árvores causa danos ao ecossistema é de {} indivíduo(s).'.format(response5))#Imprimi a seleção do mysql.
+            print('Conscientes: {} indivíduo(s).'.format(response5))#Imprimi a seleção do mysql.
 
             # Variável comando3_1 recebe um comando na linguagem mysql para selecionar registros(todos) da tabela Perguntas onde a coluna pergunta2 for n ou N(como values no mysql).
             comando3_1 = f"""SELECT count(*) from Perguntas WHERE pergunta2='n' or pergunta2='N'"""
             cursor.execute(comando3_1)#Executa o comando de SELECT da variável comando3_1 no banco de dados do mysql.
             response6=cursor.fetchall()#fechall é utilizado para consultas(trazer valores e colunas), ela inclui todas as linhas.
-            print('Ainda assim {} indivíduos permaneciam sem estarem cientes de que a derrubada de árvores favorece o dano ecossistêmico.'.format(response6))#Imprimi a seleção do mysql.
+            print('Inconscientes: {} indivíduo(s).'.format(response6))#Imprimi a seleção do mysql.
             print('\n')
 
+            print('Número de indivíduos conscientes e inconscientes de que a pecuária resulta no empobrecimento do solo podendo causa danos ao ecossistema:')
             # Variável comando4 recebe um comando na linguagem mysql para selecionar registros(todos) da tabela Perguntas onde a coluna pergunta3 for s ou S(como values no mysql).
             comando4 = f"""SELECT count(*) from Perguntas WHERE pergunta3='s' or pergunta3='S'"""
             cursor.execute(comando4)#Executa o comando de SELECT da variável comando4 no banco de dados do mysql.
             response7=cursor.fetchall()#fechall é utilizado para consultas(trazer valores e colunas), ela inclui todas as linhas.
-            print('O número de indivíduos cientes de que a pecuária causa o empobrecimento do solo podendo afetar o equilíbrio ecossistemico é de {} indivíduo(s).'.format(response7))#Imprimi a seleção do mysql.
+            print('Conscientes: {} indivíduo(s).'.format(response7))#Imprimi a seleção do mysql.
 
             # Variável comando4_1 recebe um comando na linguagem mysql para selecionar registros(todos) da tabela Perguntas onde a coluna pergunta3 for n ou N(como values no mysql).
             comando4_1= f"""SELECT count(*) from Perguntas WHERE pergunta3='n' or pergunta3='N'"""
             cursor.execute(comando4_1)#Executa o comando de SELECT da variável comando4_1 no banco de dados do mysql.
             response8=cursor.fetchall()#fechall é utilizado para consultas(trazer valores e colunas), ela inclui todas as linhas.
-            print('Ainda assim {} indivíduos permaneciam sem estarem cientes de que a pecuária causa o empobrecimento do solo podendo favorecer o dano ecossistêmico.'.format(response8))#Imprimi a seleção do mysql.
+            print('Inconscientes: {} indivíduo(s).'.format(response8))#Imprimi a seleção do mysql.
             print('\n')#Espaçamento.
 
         elif option=='3':#Cai nessa condição ao selecionar a opção 3 na pergunta anterior.
