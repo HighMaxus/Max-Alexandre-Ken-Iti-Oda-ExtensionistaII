@@ -3,7 +3,7 @@ import mysql.connector
 conexao=mysql.connector.connect(host='localhost',
                                 database='extensionista2',
                                 user='root',
-                                password='password')#Tutoria ao corrigir deverá logar com seu host e senha. o database extensionista2 deverá ser criado antes no mysql.
+                                password='dbqr45um')#Tutoria ao corrigir deverá logar com seu host e senha. o database extensionista2 deverá ser criado antes no mysql.
 #Variável cursor recebe conexao(conecta python com o mysql) aplicando o comando cursor
 cursor=conexao.cursor()
 
@@ -185,7 +185,9 @@ def consulta():# Ao selecionar a opção consulta como uma das opções que apar
             cursor.execute(comando1_2)#Executa o comando de SELECT da variável comando1_2 no banco de dados do mysql.
             response2=cursor.fetchall()#fechall é utilizado para consultas(trazer valores e colunas), ela inclui todas as linhas.
             print('\n')
-            print('Total de entrevistados que responderam as perguntas: {} .'.format(response2))#Imprimi a seleção do mysql.
+            for i in response2:  # Estrutura for para retirar o colchete dos valores imprimidos nos dados extraídos do MySql.
+                for f in i:  # Estrutura for para retirar o parentese dos valores imprimidos nos dados extraídos do MySql.
+                      print('Total de entrevistados que responderam as perguntas: {} indivíduo(s).'.format(f))#Imprimi a seleção do mysql.
             print('\n')
 
             print('Número de indivíduos conscientes e inconscientes de que a queimada causa danos ao ecossistema:')
@@ -193,13 +195,17 @@ def consulta():# Ao selecionar a opção consulta como uma das opções que apar
             comando2=f"""SELECT count(*) from Perguntas WHERE pergunta1='s' or pergunta1='S'"""
             cursor.execute(comando2)#Executa o comando de SELECT da variável comando2 no banco de dados do mysql.
             response3=cursor.fetchall()#fechall é utilizado para consultas(trazer valores e colunas), ela inclui todas as linhas.
-            print('Conscientes: {} indivíduo(s).'.format(response3))#Imprimi a seleção do mysql.
+            for i in response3:  # Estrutura for para retirar o colchete dos valores imprimidos nos dados extraídos do MySql.
+                for f in i:  # Estrutura for para retirar o parentese dos valores imprimidos nos dados extraídos do MySql.
+                    print('Conscientes: {} indivíduo(s).'.format(f))#Imprimi a seleção do mysql.
 
             # Variável comando2_1 recebe um comando na linguagem mysql para selecionar registros(todos) da tabela Perguntas onde a coluna pergunta1 for n ou N(como values no mysql).
             comando2_1=f"""SELECT count(*) from Perguntas WHERE pergunta1='n' or pergunta1='N'"""
             cursor.execute(comando2_1)#Executa o comando de SELECT da variável comando2_1 no banco de dados do mysql.
             response4=cursor.fetchall()#fechall é utilizado para consultas(trazer valores e colunas), ela inclui todas as linhas.
-            print('Inconscientes: {} indivíduo(s).'.format(response4))#Imprimi a seleção do mysql.
+            for i in response4:  # Estrutura for para retirar o colchete dos valores imprimidos nos dados extraídos do MySql.
+                for f in i:  # Estrutura for para retirar o parentese dos valores imprimidos nos dados extraídos do MySql.
+                    print('Inconscientes: {} indivíduo(s).'.format(f))#Imprimi a seleção do mysql.
             print('\n')
 
             print('Número de indivíduos conscientes e inconscientes de que a derrubada de árvores causa danos ao ecossistema:')
@@ -207,13 +213,17 @@ def consulta():# Ao selecionar a opção consulta como uma das opções que apar
             comando3 = f"""SELECT count(*) from Perguntas WHERE pergunta2='s' or pergunta2='S'"""
             cursor.execute(comando3)#Executa o comando de SELECT da variável comando3 no banco de dados do mysql.
             response5=cursor.fetchall()#fechall é utilizado para consultas(trazer valores e colunas), ela inclui todas as linhas.
-            print('Conscientes: {} indivíduo(s).'.format(response5))#Imprimi a seleção do mysql.
+            for i in response5:  # Estrutura for para retirar o colchete dos valores imprimidos nos dados extraídos do MySql.
+                for f in i:  # Estrutura for para retirar o parentese dos valores imprimidos nos dados extraídos do MySql.
+                    print('Conscientes: {} indivíduo(s).'.format(f))#Imprimi a seleção do mysql.
 
             # Variável comando3_1 recebe um comando na linguagem mysql para selecionar registros(todos) da tabela Perguntas onde a coluna pergunta2 for n ou N(como values no mysql).
             comando3_1 = f"""SELECT count(*) from Perguntas WHERE pergunta2='n' or pergunta2='N'"""
             cursor.execute(comando3_1)#Executa o comando de SELECT da variável comando3_1 no banco de dados do mysql.
             response6=cursor.fetchall()#fechall é utilizado para consultas(trazer valores e colunas), ela inclui todas as linhas.
-            print('Inconscientes: {} indivíduo(s).'.format(response6))#Imprimi a seleção do mysql.
+            for i in response6:  # Estrutura for para retirar o colchete dos valores imprimidos nos dados extraídos do MySql.
+                for f in i:  # Estrutura for para retirar o parentese dos valores imprimidos nos dados extraídos do MySql.
+                    print('Inconscientes: {} indivíduo(s).'.format(f))#Imprimi a seleção do mysql.
             print('\n')
 
             print('Número de indivíduos conscientes e inconscientes de que a pecuária resulta no empobrecimento do solo podendo causa danos ao ecossistema:')
@@ -221,13 +231,17 @@ def consulta():# Ao selecionar a opção consulta como uma das opções que apar
             comando4 = f"""SELECT count(*) from Perguntas WHERE pergunta3='s' or pergunta3='S'"""
             cursor.execute(comando4)#Executa o comando de SELECT da variável comando4 no banco de dados do mysql.
             response7=cursor.fetchall()#fechall é utilizado para consultas(trazer valores e colunas), ela inclui todas as linhas.
-            print('Conscientes: {} indivíduo(s).'.format(response7))#Imprimi a seleção do mysql.
+            for i in response2:  # Estrutura for para retirar o colchete dos valores imprimidos nos dados extraídos do MySql.
+                for f in i:  # Estrutura for para retirar o parentese dos valores imprimidos nos dados extraídos do MySql.
+                    print('Conscientes: {} indivíduo(s).'.format(f))#Imprimi a seleção do mysql.
 
             # Variável comando4_1 recebe um comando na linguagem mysql para selecionar registros(todos) da tabela Perguntas onde a coluna pergunta3 for n ou N(como values no mysql).
             comando4_1= f"""SELECT count(*) from Perguntas WHERE pergunta3='n' or pergunta3='N'"""
             cursor.execute(comando4_1)#Executa o comando de SELECT da variável comando4_1 no banco de dados do mysql.
             response8=cursor.fetchall()#fechall é utilizado para consultas(trazer valores e colunas), ela inclui todas as linhas.
-            print('Inconscientes: {} indivíduo(s).'.format(response8))#Imprimi a seleção do mysql.
+            for i in response2:  # Estrutura for para retirar o colchete dos valores imprimidos nos dados extraídos do MySql.
+                for f in i:  # Estrutura for para retirar o parentese dos valores imprimidos nos dados extraídos do MySql.
+                    print('Inconscientes: {} indivíduo(s).'.format(f))#Imprimi a seleção do mysql.
             print('\n')#Espaçamento.
 
         elif option=='3':#Cai nessa condição ao selecionar a opção 3 na pergunta anterior.
@@ -242,8 +256,16 @@ def consulta():# Ao selecionar a opção consulta como uma das opções que apar
             cursor.execute(comando6)#Executa o comando de SELECT da variável comando6 no banco de dados do mysql.
             response10=cursor.fetchall()#fechall é utilizado para consultas(trazer valores e colunas), ela inclui todas as linhas.
 
-            print('Numero de individuos apoiadores: {} , numero de individuos não apoiadores: {}'.format(response9, response10))#Imprimi a seleção do mysql, referente ao comando6 e comando7.
+            for i in response9:  # Estrutura for para retirar o colchete dos valores imprimidos nos dados extraídos do MySql.
+                for f in i:  # Estrutura for para retirar o parentese dos valores imprimidos nos dados extraídos do MySql.
+                    print('Número de individuos apoiadores: {} indivíduo(s)'.format(f))#Imprimi a seleção do mysql, referente ao comando9.
 
+            for i in response10:  # Estrutura for para retirar o colchete dos valores imprimidos nos dados extraídos do MySql.
+                for f in i:  # Estrutura for para retirar o parentese dos valores imprimidos nos dados extraídos do MySql.
+                    print('Número de individuos não apoiadores: {} indivíduo(s)'.format(f))#Imprimi a seleção do mysql, referente ao comando10.
+
+            print('\n')  # Espaçamento.
+            print('Sugestões ou argumentos de discordância:')
             # Variável comando7 recebe comando na linguagem mysql para selecionar valores das colunas cod_conclusao e argumento da tabela Argumento.
             comando7= f"""SELECT cod_argumento,argumento from Argumento"""
             cursor.execute(comando7)#Executa o comando de SELECT da variável comando7 no banco de dados do mysql.
@@ -251,7 +273,8 @@ def consulta():# Ao selecionar a opção consulta como uma das opções que apar
             print(response11)#Imprimi a seleção do mysql.
             print('\n')#Espaçamento.
 
-        elif option=='4':#Se a opção escolhida for 4 sai do laço de repetição.
+        elif option=='4':#Se a opção escolhida for 4 sai do laço de repetição.4
+
             break
 
         else:#Caso digite uma opção inválida volta para o laço de repetição.
@@ -392,7 +415,9 @@ while True:#Laço de repetição para retornar ao início caso digite a opção 
  comando1 = f"""SELECT count(cod_cadastro) from Menu;"""
  cursor.execute(comando1)# Executa o codigo da variável comando1(execução no banco de dados do mysql).
  response2 = cursor.fetchall()#Irá trazer os valores da consulta da variável comando1.
- print("Número total de cadastros realizados: {}".format(response2))  # Imprimi a seleção do mysql.
+ for i in response2:#Estrutura for para retirar o colchete dos valores imprimidos nos dados extraídos do MySql.
+     for f in i:#Estrutura for para retirar o parentese dos valores imprimidos nos dados extraídos do MySql.
+         print("Número total de cadastros realizados: {}".format(f))  # Imprimi a seleção do mysql.
 
 
  comandoPerguntas = f"""Insert into Menu(cod_perguntas) Select distinct cod_perguntas from Perguntas;"""
@@ -401,7 +426,9 @@ while True:#Laço de repetição para retornar ao início caso digite a opção 
  comando0 = f"""SELECT count(cod_perguntas) from Menu;"""
  cursor.execute(comando0)# Executa o codigo da variável comando0(execução no banco de dados do mysql).
  response = cursor.fetchall()#Irá trazer os valores da consulta da variável comando0.
- print("Número total de sessão de perguntas realizadas:{}".format(response))# Imprimi a seleção do mysql.
+ for i in response:#Estrutura for para retirar o colchete dos valores imprimidos nos dados extraídos do MySql.
+     for f in i:#Estrutura for para retirar o parentese dos valores imprimidos nos dados extraídos do MySql.
+         print("Número total de sessão de perguntas realizadas:{}".format(f))# Imprimi a seleção do mysql.
 
  comandoArgumento = f"""Insert into Menu(cod_argumento) Select cod_argumento from Argumento;"""
  cursor.execute(comandoArgumento)# Executa o codigo da variável comandoArgumento(execução no banco de dados do mysql).
@@ -409,7 +436,9 @@ while True:#Laço de repetição para retornar ao início caso digite a opção 
  comando2 = f"""SELECT count(cod_argumento) from Menu;"""
  cursor.execute(comando2)# Executa o codigo da variável comando2(execução no banco de dados do mysql).
  response3 = cursor.fetchall()#Irá trazer os valores da consulta da variável comando2.
- print("Número total de argumentos coletados: {}".format(response3))  # Imprimi a seleção do mysql.
+ for i in response3:#Estrutura for para retirar o colchete dos valores imprimidos nos dados extraídos do MySql.
+     for f in i:#Estrutura for para retirar o parentese dos valores imprimidos nos dados extraídos do MySql.
+         print("Número total de argumentos coletados: {}".format(f))  # Imprimi a seleção do mysql.
  print('\n')#Espaçamento.
 
  #Listará as opções que o usuário poderá realizar no programa.
