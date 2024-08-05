@@ -3,7 +3,7 @@ import mysql.connector
 conexao=mysql.connector.connect(host='localhost',
                                 database='extensionista2',
                                 user='root',
-                                password='dbqr45um')#Tutoria ao corrigir deverá logar com seu host e senha. o database extensionista2 deverá ser criado antes no mysql.
+                                password='password')#Tutoria ao corrigir deverá logar com seu host e senha. o database extensionista2 deverá ser criado antes no mysql.
 #Variável cursor recebe conexao(conecta python com o mysql) aplicando o comando cursor
 cursor=conexao.cursor()
 
