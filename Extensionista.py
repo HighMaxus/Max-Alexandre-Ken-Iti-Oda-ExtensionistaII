@@ -231,7 +231,7 @@ def consulta():# Ao selecionar a opção consulta como uma das opções que apar
             comando4 = f"""SELECT count(*) from Perguntas WHERE pergunta3='s' or pergunta3='S'"""
             cursor.execute(comando4)#Executa o comando de SELECT da variável comando4 no banco de dados do mysql.
             response7=cursor.fetchall()#fechall é utilizado para consultas(trazer valores e colunas), ela inclui todas as linhas.
-            for i in response2:  # Estrutura for para retirar o colchete dos valores imprimidos nos dados extraídos do MySql.
+            for i in response7:  # Estrutura for para retirar o colchete dos valores imprimidos nos dados extraídos do MySql.
                 for f in i:  # Estrutura for para retirar o parentese dos valores imprimidos nos dados extraídos do MySql.
                     print('Conscientes: {} indivíduo(s).'.format(f))#Imprimi a seleção do mysql.
 
@@ -239,7 +239,7 @@ def consulta():# Ao selecionar a opção consulta como uma das opções que apar
             comando4_1= f"""SELECT count(*) from Perguntas WHERE pergunta3='n' or pergunta3='N'"""
             cursor.execute(comando4_1)#Executa o comando de SELECT da variável comando4_1 no banco de dados do mysql.
             response8=cursor.fetchall()#fechall é utilizado para consultas(trazer valores e colunas), ela inclui todas as linhas.
-            for i in response2:  # Estrutura for para retirar o colchete dos valores imprimidos nos dados extraídos do MySql.
+            for i in response8:  # Estrutura for para retirar o colchete dos valores imprimidos nos dados extraídos do MySql.
                 for f in i:  # Estrutura for para retirar o parentese dos valores imprimidos nos dados extraídos do MySql.
                     print('Inconscientes: {} indivíduo(s).'.format(f))#Imprimi a seleção do mysql.
             print('\n')#Espaçamento.
